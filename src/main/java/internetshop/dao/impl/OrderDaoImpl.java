@@ -4,7 +4,6 @@ import internetshop.dao.OrderDao;
 import internetshop.db.Storage;
 import internetshop.lib.Dao;
 import internetshop.model.Order;
-import internetshop.model.Product;
 import internetshop.model.User;
 import java.util.List;
 import java.util.Optional;
@@ -14,13 +13,13 @@ import java.util.stream.IntStream;
 
 @Dao
 public class OrderDaoImpl implements OrderDao {
+
     @Override
-    public Order completeOrder(List<Product> products, User user) {
+    public Order create(Order order) {
         OptionalInt index = IntStream.range(0, Storage.shoppingCarts.size())
-                .filter(i -> Storage.shoppingCarts.get(i).getUser().getId().equals(user.getId()))
-                .findFirst();
+                .filter(i -> Storage.shoppingCarts.get(i).getUser().getId()
+                        .equals(order.getUser().getId())).findFirst();
         Storage.shoppingCarts.remove(index.getAsInt());
-        Order order = new Order(products, user);
         Storage.addOrder(order);
         return order;
     }
