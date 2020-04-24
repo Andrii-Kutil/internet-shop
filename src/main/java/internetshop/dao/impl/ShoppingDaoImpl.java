@@ -19,10 +19,11 @@ public class ShoppingDaoImpl implements ShoppingCartDao {
     }
 
     @Override
-    public ShoppingCart add(ShoppingCart shoppingCart, Product product) {
-        Storage.shoppingCarts.stream()
-                .filter(s -> s.getId().equals(shoppingCart.getId()))
-                .forEach(s -> s.getProducts().add(product));
+    public ShoppingCart update(ShoppingCart shoppingCart) {
+        IntStream.range(0, Storage.shoppingCarts.size())
+                .filter(i -> shoppingCart.getId()
+                        .equals(Storage.shoppingCarts.get(i).getId()))
+                .forEach(i -> Storage.shoppingCarts.set(i, shoppingCart));
         return shoppingCart;
     }
 
@@ -31,13 +32,6 @@ public class ShoppingDaoImpl implements ShoppingCartDao {
         return Storage.shoppingCarts.stream()
                 .filter(s -> s.getId().equals(shoppingCart.getId()))
                 .findAny().get().getProducts().remove(product);
-    }
-
-    @Override
-    public void clear(ShoppingCart shoppingCart) {
-        IntStream.range(0, Storage.shoppingCarts.size())
-                .filter(i -> Storage.shoppingCarts.get(i).getId().equals(shoppingCart.getId()))
-                .forEach(i -> Storage.shoppingCarts.get(i).getProducts().clear());
     }
 
     @Override
