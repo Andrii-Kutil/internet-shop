@@ -11,7 +11,7 @@ public interface ShoppingCartService {
 
     boolean deleteProduct(ShoppingCart shoppingCart, Product product);
 
-    void clear(ShoppingCart shoppingCart);t
+    void clear(ShoppingCart shoppingCart);
 
     ShoppingCart getByUserId(Long userId);
 
