@@ -39,6 +39,14 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
+    public Order update(Order order) {
+        IntStream.range(0, Storage.orders.size())
+                .filter(i -> order.getId().equals(Storage.products.get(i).getId()))
+                .forEach(i -> Storage.orders.set(i, order));
+        return order;
+    }
+
+    @Override
     public List<Order> getAll() {
         return Storage.orders;
     }
