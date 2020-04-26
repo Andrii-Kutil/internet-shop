@@ -14,7 +14,7 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
 
     @Inject
-    OrderDao orderDao;
+    private OrderDao orderDao;
     @Inject
     private ShoppingCartService cartService;
 
