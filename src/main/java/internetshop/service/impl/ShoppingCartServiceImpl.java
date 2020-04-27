@@ -12,7 +12,7 @@ import java.util.List;
 public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Inject
-    ShoppingCartDao shoppingCartDao;
+    private ShoppingCartDao shoppingCartDao;
 
     @Override
     public ShoppingCart create(ShoppingCart shoppingCart) {
@@ -28,7 +28,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public boolean deleteProduct(ShoppingCart shoppingCart, Product product) {
-        return shoppingCartDao.delete(shoppingCart, product);
+        return shoppingCartDao.get(shoppingCart.getId()).get().getProducts().remove(product);
     }
 
     @Override
@@ -44,6 +44,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public List<Product> getAllProducts(ShoppingCart shoppingCart) {
-        return shoppingCartDao.getAllProducts(shoppingCart);
+        return shoppingCartDao.getAll().stream()
+                .filter(s -> s.getId().equals(shoppingCart.getId()))
+                .findAny().get().getProducts();
     }
 }
