@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class AllProductsController extends HttpServlet {
+public class GetAllProductsController extends HttpServlet {
     private static Injector injector = Injector.getInstance("internetshop");
     private final ProductService productService = (ProductService) injector
             .getInstance(ProductService.class);
