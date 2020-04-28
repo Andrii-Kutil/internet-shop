@@ -10,7 +10,7 @@ public class ShoppingCart {
 
     public ShoppingCart(User user) {
         this.user = user;
-        products = new ArrayList<>();
+        this.products = new ArrayList<>();
     }
 
     public Long getId() {
