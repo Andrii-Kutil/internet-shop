@@ -1,21 +1,22 @@
-package internetshop.controllers;
+package internetshop.controllers.product;
 
 import internetshop.lib.Injector;
-import internetshop.service.UserService;
+import internetshop.service.ProductService;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class GetAllUsersController extends HttpServlet {
+public class EditProductsController extends HttpServlet {
     private static Injector injector = Injector.getInstance("internetshop");
-    private final UserService userService = (UserService) injector.getInstance(UserService.class);
+    private final ProductService productService = (ProductService) injector
+            .getInstance(ProductService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setAttribute("users", userService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/users/all.jsp").forward(req, resp);
+        req.setAttribute("products", productService.getAll());
+        req.getRequestDispatcher("/WEB-INF/views/editProducts.jsp").forward(req, resp);
     }
 }

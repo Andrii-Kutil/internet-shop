@@ -10,8 +10,9 @@ public class User {
         this.name = name;
     }
 
-    public User(Long id) {
+    public User(Long id, String login) {
         this.id = id;
+        this.login = login;
     }
 
     public User(String name, String login, String password) {

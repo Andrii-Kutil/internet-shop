@@ -1,4 +1,4 @@
-package internetshop.controllers;
+package internetshop.controllers.product;
 
 import internetshop.lib.Injector;
 import internetshop.model.Product;
@@ -16,17 +16,12 @@ public class AddProductController extends HttpServlet {
             .getInstance(ProductService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/addProduct.jsp").forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter("name");
-        req.getParameter("price");
-        BigDecimal price = new BigDecimal(3);
+        BigDecimal price = new BigDecimal(req.getParameter("price"));
         productService.create(new Product(name, price));
-        resp.sendRedirect(req.getContextPath() + "/add/products");
+        req.setAttribute("products", productService.getAll());
+        req.getRequestDispatcher("/WEB-INF/views/editProducts.jsp").forward(req, resp);
     }
 }
