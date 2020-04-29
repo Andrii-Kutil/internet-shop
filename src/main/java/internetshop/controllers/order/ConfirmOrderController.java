@@ -4,6 +4,7 @@ import internetshop.lib.Injector;
 import internetshop.model.ShoppingCart;
 import internetshop.service.OrderService;
 import internetshop.service.ShoppingCartService;
+
 import java.io.IOException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,9 @@ public class ConfirmOrderController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         ShoppingCart shoppingCart = shoppingCartService.getByUserId(USER_ID).get();
-        orderService.completeOrder(shoppingCart.getProducts(), shoppingCart.getUser());
+        if (!shoppingCart.getProducts().isEmpty()) {
+            orderService.completeOrder(shoppingCart.getProducts(), shoppingCart.getUser());
+        }
         resp.sendRedirect(req.getContextPath() + "/orders/all");
     }
 }
