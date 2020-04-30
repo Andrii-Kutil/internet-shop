@@ -1,8 +1,6 @@
 package internetshop.controllers.shoppingcart;
 
 import internetshop.lib.Injector;
-import internetshop.model.ShoppingCart;
-import internetshop.model.User;
 import internetshop.service.ShoppingCartService;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -19,10 +17,7 @@ public class ShoppingCartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        if (shoppingCartService.getByUserId(USER_ID).isEmpty()) {
-            shoppingCartService.create(new ShoppingCart(new User(USER_ID, "NO_NAME")));
-        }
-        req.setAttribute("shoppingCart", shoppingCartService.getByUserId(USER_ID).get());
+        req.setAttribute("shoppingCart", shoppingCartService.getByUserId(USER_ID));
         req.getRequestDispatcher("/WEB-INF/views/allProductsInShopCart.jsp").forward(req, resp);
     }
 }
