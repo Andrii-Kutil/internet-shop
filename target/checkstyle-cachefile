@@ -1,17 +1,17 @@
-#Thu Apr 30 15:08:16 EEST 2020
+#Thu Apr 30 15:32:50 EEST 2020
+C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\LoginController.java=1588249556268
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\shoppingcart\\DeleteProductFromShoppingCart.java=1588235442701
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\product\\DeleteProductController.java=1588092356150
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\dao\\impl\\UserDaoImpl.java=1587674876990
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\model\\Product.java=1588078668148
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\dao\\ProductDao.java=1587985529882
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\order\\DeleteOrderController.java=1588167391412
-C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\service\\impl\\OrderServiceImpl.java=1588248315533
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\service\\ProductService.java=1587985529888
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\InjectDataController.java=1588241112389
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\dao\\OrderDao.java=1587985529877
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\dao\\ShoppingCartDao.java=1587985529883
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\lib\\Inject.java=1587646321230
-C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\RegistrationController.java=1588078668148
+C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\RegistrationController.java=1588249314715
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\product\\AddProductController.java=1588241083536
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\dao\\GenericDao.java=1587985529875
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\lib\\Injector.java=1587990231974
