@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.29">
 <file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\controllers\LoginController.java">
-<error line="10" severity="error" message="Wrong lexicographical order for &apos;java.io.IOException&apos; import. Should be before &apos;javax.servlet.http.HttpServletResponse&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\controllers\RegistrationController.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\service\impl\OrderServiceImpl.java">
 </file>
 </checkstyle>
