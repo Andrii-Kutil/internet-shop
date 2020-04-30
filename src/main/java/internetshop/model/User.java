@@ -10,8 +10,15 @@ public class User {
         this.name = name;
     }
 
+
     public User(Long id) {
         this.id = id;
+    }
+
+    public User(Long id, String login, String name) {
+        this.id = id;
+        this.login = login;
+        this.name = name;
     }
 
     public User(String name, String login, String password) {
@@ -50,15 +57,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "User{"
-                + "id=" + id
-                + ", name='" + name + '\''
-                + ", login='" + login + '\''
-                + ", password='" + password + '\''
-                + '}';
     }
 }
