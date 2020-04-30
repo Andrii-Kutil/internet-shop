@@ -20,7 +20,7 @@ public class ConfirmOrderController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Long id = Long.valueOf(req.getParameter("id"));
-        ShoppingCart shoppingCart = shoppingCartService.getByUserId(USER_ID).get();
+        ShoppingCart shoppingCart = shoppingCartService.getByUserId(USER_ID);
         if (!shoppingCart.getProducts().isEmpty()) {
             orderService.completeOrder(shoppingCart.getProducts(), shoppingCart.getUser());
         }

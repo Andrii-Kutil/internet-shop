@@ -1,8 +1,6 @@
 package internetshop.controllers.shoppingcart;
 
 import internetshop.lib.Injector;
-import internetshop.model.ShoppingCart;
-import internetshop.model.User;
 import internetshop.service.ProductService;
 import internetshop.service.ShoppingCartService;
 import java.io.IOException;
@@ -22,10 +20,7 @@ public class AddProductToShoppingCartController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         Long productId = Long.valueOf(req.getParameter("id"));
-        if (shoppingCartService.getByUserId(USER_ID).isEmpty()) {
-            shoppingCartService.create(new ShoppingCart(new User(USER_ID, "NO_NAME")));
-        }
-        shoppingCartService.addProduct(shoppingCartService.getByUserId(USER_ID).get(),
+        shoppingCartService.addProduct(shoppingCartService.getByUserId(USER_ID),
                 productService.get(productId));
         resp.sendRedirect(req.getContextPath() + "/products/all");
     }

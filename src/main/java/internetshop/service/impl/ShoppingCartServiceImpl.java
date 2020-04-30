@@ -7,7 +7,6 @@ import internetshop.model.Product;
 import internetshop.model.ShoppingCart;
 import internetshop.service.ShoppingCartService;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
@@ -29,7 +28,12 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public boolean deleteProduct(ShoppingCart shoppingCart, Product product) {
-        return shoppingCart.getProducts().remove(product);
+        if (shoppingCart.getProducts().removeIf(s -> s.getId().equals(product.getId()))) {
+            shoppingCartDao.update(shoppingCart);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -39,8 +43,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
-    public Optional<ShoppingCart> getByUserId(Long userId) {
-        return shoppingCartDao.get(userId);
+    public ShoppingCart getByUserId(Long userId) {
+        return shoppingCartDao.get(userId).get();
     }
 
     @Override
