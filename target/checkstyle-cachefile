@@ -1,5 +1,4 @@
-#Thu Apr 30 15:33:51 EEST 2020
-C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\LoginController.java=1588249556268
+#Thu Apr 30 17:31:36 EEST 2020
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\shoppingcart\\DeleteProductFromShoppingCart.java=1588235442701
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\product\\DeleteProductController.java=1588092356150
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\dao\\impl\\UserDaoImpl.java=1587674876990
@@ -27,8 +26,8 @@ configuration*?=D2D9DE72EA8F9BA828EDBA5F176BE1FBEA27CFD4
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\dao\\UserDao.java=1587985529884
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\dao\\impl\\ShoppingDaoImpl.java=1588246410991
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\service\\OrderService.java=1587885467252
-C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\service\\impl\\ShoppingCartServiceImpl.java=1588241052577
-C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\service\\impl\\UserServiceImpl.java=1588248214942
+C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\service\\impl\\ShoppingCartServiceImpl.java=1588256772572
+C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\service\\impl\\UserServiceImpl.java=1588255918447
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\product\\GetAllProductsController.java=1588091995131
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\user\\DeleteUserController.java=1588091995159
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\product\\EditProductsController.java=1588091995164
@@ -41,6 +40,6 @@ C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\cont
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\lib\\Dao.java=1587646321229
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\order\\GetAllOrdersController.java=1588167321073
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\controllers\\shoppingcart\\ShoppingCartController.java=1588241087589
-C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\service\\UserService.java=1588248195185
+C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\service\\UserService.java=1588255918462
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\dao\\impl\\OrderDaoImpl.java=1588247722577
 C\:\\Users\\PC\\IdeaProjects\\internet-shop\\src\\main\\java\\internetshop\\db\\Storage.java=1587675027747
