@@ -10,7 +10,6 @@ public class User {
         this.name = name;
     }
 
-
     public User(Long id) {
         this.id = id;
     }

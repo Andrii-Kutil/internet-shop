@@ -12,22 +12,6 @@
         <th>Name</th>
         <th>Price</th>
     </tr>
-<<<<<<< HEAD
-    <c:forEach var="product" items="${productsInShoppingCart}">
-        <tr>
-            <td>
-                <c:out value="${product.id}"/>
-            </td>
-            <td>
-                <c:out value="${product.name}"/>
-            </td>
-            <td>
-                <c:out value="${product.price}"/>
-            </td>
-        </tr>
-    </c:forEach>
-</table>
-=======
     <c:forEach var="product" items="${shoppingCart.products}">
     <tr>
         <td>
@@ -47,6 +31,5 @@
     </c:forEach>
     <a href="${pageContext.request.contextPath}
                     /confirm?id=${shoppingCart.id}">CONFIRM</a>
->>>>>>> origin/master
 </body>
 </html>
