@@ -29,7 +29,13 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public boolean deleteProduct(ShoppingCart shoppingCart, Product product) {
-        return shoppingCartDao.get(shoppingCart.getId()).get().getProducts().remove(product);
+
+        if (shoppingCart.getProducts().remove(product)) {
+            shoppingCartDao.update(shoppingCart);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -39,8 +45,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
-    public Optional<ShoppingCart> getByUserId(Long userId) {
-        return shoppingCartDao.get(userId);
+
+    public ShoppingCart getByUserId(Long userId) {
+        return shoppingCartDao.get(userId).get();
     }
 
     @Override

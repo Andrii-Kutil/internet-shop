@@ -23,7 +23,11 @@
                 </td>
                 <td>
                     <a href="${pageContext.request.contextPath}
+<<<<<<< HEAD
                     /add/products/shoppingcart?id=${product.id}">add in shopping cart</a>
+=======
+                    /add/products/shoppingcart?id=${product.id}">Add to shopping cart</a>
+>>>>>>> origin/master
                 </td>
             </tr>
         </c:forEach>
@@ -32,4 +36,7 @@
 <body>
 </body>
 </html>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master

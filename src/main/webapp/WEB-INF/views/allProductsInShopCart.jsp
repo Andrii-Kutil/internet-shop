@@ -12,19 +12,24 @@
         <th>Name</th>
         <th>Price</th>
     </tr>
-    <c:forEach var="product" items="${productsInShoppingCart}">
-        <tr>
-            <td>
-                <c:out value="${product.id}"/>
-            </td>
-            <td>
-                <c:out value="${product.name}"/>
-            </td>
-            <td>
-                <c:out value="${product.price}"/>
-            </td>
-        </tr>
+    <c:forEach var="product" items="${shoppingCart.products}">
+    <tr>
+        <td>
+            <c:out value="${product.id}"/>
+        </td>
+        <td>
+            <c:out value="${product.name}"/>
+        </td>
+        <td>
+            <c:out value="${product.price}"/>
+        </td>
+        <td>
+            <a href="${pageContext.request.contextPath}
+                    /shoppingcart/products/delete?id=${product.id}">delete</a>
+        </td>
+    </tr>
     </c:forEach>
-</table>
+    <a href="${pageContext.request.contextPath}
+                    /confirm?id=${shoppingCart.id}">CONFIRM</a>
 </body>
 </html>
