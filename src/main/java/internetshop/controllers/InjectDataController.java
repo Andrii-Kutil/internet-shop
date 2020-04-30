@@ -23,18 +23,15 @@ public class InjectDataController extends HttpServlet {
     private final ShoppingCartService shoppingCartService = (ShoppingCartService)
             injector.getInstance(ShoppingCartService.class);
 
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         User bob = new User("Bob");
         User alisa = new User("Alisa");
-
         User defaultUser = new User(USER_ID, "default", "NO_NAME");
         userService.create(bob);
         userService.create(alisa);
         shoppingCartService.create(new ShoppingCart(defaultUser));
-
         Product banana = new Product("banana", new BigDecimal(45));
         Product car = new Product("car", new BigDecimal(500000));
         Product flat = new Product("flat", new BigDecimal(3000000));
