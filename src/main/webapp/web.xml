@@ -65,6 +65,7 @@
     <servlet-mapping>
         <servlet-name>addProduct</servlet-name>
         <url-pattern>/product/add</url-pattern>
+
     </servlet-mapping>
 
     <servlet>

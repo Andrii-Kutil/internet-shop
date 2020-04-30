@@ -24,6 +24,7 @@
                 <td>
                     <a href="${pageContext.request.contextPath}
                     /add/products/shoppingcart?id=${product.id}">Add to shopping cart</a>
+
                 </td>
             </tr>
         </c:forEach>
@@ -32,3 +33,4 @@
 <body>
 </body>
 </html>
+
