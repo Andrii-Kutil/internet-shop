@@ -32,4 +32,58 @@
 </file>
 <file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\controller\user\GetAllUsersController.java">
 </file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\dao\GenericDao.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\dao\impl\OrderDaoImpl.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\dao\impl\ProductDaoImpl.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\dao\impl\ShoppingDaoImpl.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\dao\impl\UserDaoImpl.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\dao\OrderDao.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\dao\ProductDao.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\dao\ShoppingCartDao.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\dao\UserDao.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\db\Storage.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\lib\Dao.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\lib\Inject.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\lib\Injector.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\lib\Service.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\model\Order.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\model\Product.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\model\ShoppingCart.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\model\User.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\service\GenericService.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\service\impl\OrderServiceImpl.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\service\impl\ProductServiceImpl.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\service\impl\ShoppingCartServiceImpl.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\service\impl\UserServiceImpl.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\service\OrderService.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\service\ProductService.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\service\ShoppingCartService.java">
+</file>
+<file name="C:\Users\PC\IdeaProjects\internet-shop\src\main\java\internetshop\service\UserService.java">
+</file>
 </checkstyle>
