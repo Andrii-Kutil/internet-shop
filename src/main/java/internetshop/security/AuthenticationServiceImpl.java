@@ -7,7 +7,7 @@ import internetshop.model.User;
 import internetshop.service.UserService;
 
 @Service
-public class AuthenticationServiceImpl implements AuthenticationService{
+public class AuthenticationServiceImpl implements AuthenticationService {
     @Inject
     private UserService userService;
 
