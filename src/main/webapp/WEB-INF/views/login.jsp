@@ -1,6 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Registration</title>
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -10,14 +10,10 @@
 </head>
 <body>
 <h2 style="color: crimson">
-    ${message}
+    ${errorMsg}
 </h2>
 <div class="container-md">
-    <form method="post" action="${pageContext.request.contextPath}/registration">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp">
-        </div>
+    <form action="${pageContext.request.contextPath}/login" method="post">
         <div class="form-group">
             <label for="login">Login</label>
             <input type="text" name="login" class="form-control" id="login" aria-describedby="emailHelp">
@@ -26,13 +22,9 @@
             <label for="pwd">Password</label>
             <input type="password" name="pwd" class="form-control" id="pwd">
         </div>
-        <div class="form-group">
-            <label for="pwd-repeat">Repeat password</label>
-            <input type="password" name="pwd-repeat" class="form-control" id="pwd-repeat">
-        </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary">Log in</button>
         or
-        <a class="btn btn-primary" href="${pageContext.request.contextPath}/login" role="button">Log in</a>
+        <a class="btn btn-primary" href="${pageContext.request.contextPath}/registration" role="button">Sign in</a>
     </form>
 </div>
 </body>
