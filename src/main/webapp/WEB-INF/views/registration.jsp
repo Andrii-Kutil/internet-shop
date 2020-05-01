@@ -17,5 +17,6 @@
     repeat password: <input type="password" name="pwd-repeat">
     <button type="submit">Register</button>
 </form>
+<a href="${pageContext.request.contextPath}/login">Login</a>
 </body>
 </html>
