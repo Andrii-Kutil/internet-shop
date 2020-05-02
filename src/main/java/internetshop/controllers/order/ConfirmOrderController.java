@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ConfirmOrderController extends HttpServlet {
-    private static final Long USER_ID = 1L;
+    private static final Long USER_ID = 0L;
     private static Injector injector = Injector.getInstance("internetshop");
     private final ShoppingCartService shoppingCartService = (ShoppingCartService)
             injector.getInstance(ShoppingCartService.class);

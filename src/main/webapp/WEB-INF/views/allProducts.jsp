@@ -2,9 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Get all product</title>
+</head>
     <h1>List of products below</h1>
-    <table border="1">
+    <table border="1" >
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -29,7 +29,6 @@
             </tr>
         </c:forEach>
     </table>
-</head>
 <body>
 </body>
 </html>

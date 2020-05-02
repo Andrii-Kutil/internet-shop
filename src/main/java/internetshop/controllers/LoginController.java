@@ -15,7 +15,6 @@ public class LoginController extends HttpServlet {
     private static Injector injector = Injector.getInstance("internetshop");
     private final AuthenticationService authService =
             (AuthenticationService) injector.getInstance(AuthenticationService.class);
-    private boolean isUserLogin = false;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
