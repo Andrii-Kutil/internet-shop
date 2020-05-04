@@ -64,7 +64,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addProduct</servlet-name>
-        <url-pattern>/product/add</url-pattern>
+        <url-pattern>/products/add</url-pattern>
 
     </servlet-mapping>
 
@@ -83,7 +83,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>allProductsInShoppingCart</servlet-name>
-        <url-pattern>/shoppingcart/products/all</url-pattern>
+        <url-pattern>/shoppingcarts/products/all</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -92,7 +92,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteProductFromShoppingCart</servlet-name>
-        <url-pattern>/shoppingcart/products/delete</url-pattern>
+        <url-pattern>/shoppingcartsproducts/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -101,7 +101,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteProduct</servlet-name>
-        <url-pattern>/product/delete</url-pattern>
+        <url-pattern>/products/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -110,7 +110,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>editProduct</servlet-name>
-        <url-pattern>/product/edit</url-pattern>
+        <url-pattern>/products/edit</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -137,7 +137,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteOrder</servlet-name>
-        <url-pattern>/order/delete</url-pattern>
+        <url-pattern>/orders/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -146,7 +146,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>orderDetails</servlet-name>
-        <url-pattern>/order/details</url-pattern>
+        <url-pattern>/orders/details</url-pattern>
     </servlet-mapping>
 
     <servlet>

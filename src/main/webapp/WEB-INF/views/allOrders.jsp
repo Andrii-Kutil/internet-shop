@@ -21,11 +21,11 @@
             </td>
             <td>
                 <a href="${pageContext.request.contextPath}
-                    /order/details?id=${order.id}">details</a>
+                    /orders/details?id=${order.id}">details</a>
             </td>
             <td>
                 <a href="${pageContext.request.contextPath}
-                    /order/delete?id=${order.id}">delete</a>
+                    /orders/delete?id=${order.id}">delete</a>
             </td>
         </tr>
     </c:forEach>
