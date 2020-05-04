@@ -2,7 +2,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Get all product</title>
     <h1>List of products below</h1>
     <table border="1">
         <tr>
