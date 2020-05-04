@@ -1,4 +1,4 @@
-package internetshop.controller;
+package internetshop.controllers;
 
 import internetshop.lib.Injector;
 import internetshop.model.Product;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class InjectDataController extends HttpServlet {
-    private static final Long USER_ID = 1L;
+    private static final Long USER_ID = 0L;
     private static Injector injector = Injector.getInstance("internetshop");
     private final UserService userService = (UserService) injector.getInstance(UserService.class);
     private final ProductService productService = (ProductService)
