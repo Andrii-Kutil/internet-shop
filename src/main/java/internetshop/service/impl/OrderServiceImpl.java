@@ -28,8 +28,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getUserOrders(User user) {
-        return orderDao.getUserOrders(user);
+    public List<Order> getUserOrders(Long userId) {
+        return orderDao.getUserOrders(userId);
     }
 
     @Override
