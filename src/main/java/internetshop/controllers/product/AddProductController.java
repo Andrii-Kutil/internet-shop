@@ -19,8 +19,12 @@ public class AddProductController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String name = req.getParameter("name");
-        BigDecimal price = new BigDecimal(req.getParameter("price"));
-        productService.create(new Product(name, price));
+        try {
+            BigDecimal price = new BigDecimal(req.getParameter("price"));
+            productService.create(new Product(name, price));
+        } catch (NumberFormatException e) {
+            req.setAttribute("message", "Please, use digits in price");
+        }
         req.setAttribute("products", productService.getAll());
         req.getRequestDispatcher("/WEB-INF/views/editProducts.jsp").forward(req, resp);
     }
