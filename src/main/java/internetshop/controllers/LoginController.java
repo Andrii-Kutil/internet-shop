@@ -4,6 +4,7 @@ import internetshop.exceptions.AuthenticationException;
 import internetshop.lib.Injector;
 import internetshop.model.User;
 import internetshop.security.AuthenticationService;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +29,7 @@ public class LoginController extends HttpServlet {
         String login = req.getParameter("login");
         String pwd = req.getParameter("pwd");
         try {
-           User user = authService.login(login, pwd);
+            User user = authService.login(login, pwd);
             HttpSession session = req.getSession();
             session.setAttribute("userId", user.getId());
         } catch (AuthenticationException e) {

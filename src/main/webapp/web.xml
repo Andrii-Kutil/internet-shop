@@ -55,7 +55,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addInShoppingCart</servlet-name>
-        <url-pattern>/add/products/shoppingcart</url-pattern>
+        <url-pattern>/shoppingcarts/products/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -92,7 +92,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteProductFromShoppingCart</servlet-name>
-        <url-pattern>/shoppingcartsproducts/delete</url-pattern>
+        <url-pattern>/shoppingcarts/products/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -110,7 +110,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>editProduct</servlet-name>
-        <url-pattern>/products/edit</url-pattern>
+        <url-pattern>/products/manage</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -129,6 +129,15 @@
     <servlet-mapping>
         <servlet-name>allOrders</servlet-name>
         <url-pattern>/orders/all</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>allOrdersSystem</servlet-name>
+        <servlet-class>internetshop.controllers.order.GetAllOrdersSystemController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allOrdersSystem</servlet-name>
+        <url-pattern>/orders/all/system</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -158,12 +167,30 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>internetshop.controllers.LogoutController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>authentificationFilter</filter-name>
         <filter-class>internetshop.web.filters.AuthenticationFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>authentificationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>authorizationFilter</filter-name>
+        <filter-class>internetshop.web.filters.AuthorizationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>authorizationFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 </web-app>
