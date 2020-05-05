@@ -28,7 +28,7 @@ public class LoginController extends HttpServlet {
         String login = req.getParameter("login");
         String pwd = req.getParameter("pwd");
         try {
-            User user = authService.login(login, pwd);
+           User user = authService.login(login, pwd);
             HttpSession session = req.getSession();
             session.setAttribute("userId", user.getId());
         } catch (AuthenticationException e) {
