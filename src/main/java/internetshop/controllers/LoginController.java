@@ -4,7 +4,6 @@ import internetshop.exceptions.AuthenticationException;
 import internetshop.lib.Injector;
 import internetshop.model.User;
 import internetshop.security.AuthenticationService;
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
