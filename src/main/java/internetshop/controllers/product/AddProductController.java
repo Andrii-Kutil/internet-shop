@@ -25,7 +25,8 @@ public class AddProductController extends HttpServlet {
             BigDecimal price = new BigDecimal(req.getParameter("price"));
             productService.create(new Product(name, price));
         } catch (NumberFormatException e) {
-            logger.error(e.getMessage());
+            Long userId = (Long) req.getSession().getAttribute("userId");
+            logger.warn("User id:" + userId + " used incorrect characters in price. " + e);
             req.setAttribute("message", "Please, use digits in price");
         }
         req.setAttribute("products", productService.getAll());
