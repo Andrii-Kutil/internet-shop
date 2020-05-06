@@ -26,7 +26,7 @@ public class AddProductController extends HttpServlet {
             productService.create(new Product(name, price));
         } catch (NumberFormatException e) {
             Long userId = (Long) req.getSession().getAttribute("userId");
-            logger.warn("User id:" + userId + " used incorrect characters in price. " + e);
+            logger.warn("User id:" + userId + " used incorrect characters in price. ", e);
             req.setAttribute("message", "Please, use digits in price");
         }
         req.setAttribute("products", productService.getAll());
