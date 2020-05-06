@@ -6,7 +6,10 @@
 </head>
 <body>
 <h1>Add product</h1>
-<form method="post" action="${pageContext.request.contextPath}/product/add">
+<h2 style="color: crimson">
+    ${message}
+</h2>
+<form method="post" action="${pageContext.request.contextPath}/products/add">
     name: <input type="text" name="name">
     price: <input type="text" name="price">
     <button type="submit">add</button>
@@ -31,7 +34,7 @@
             </td>
             <td>
                 <a href="${pageContext.request.contextPath}
-                    /product/delete?id=${product.id}">Delete</a>
+                    /products/delete?id=${product.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>

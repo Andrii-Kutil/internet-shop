@@ -1,11 +1,13 @@
 package internetshop.controllers;
 
 import internetshop.lib.Injector;
+import internetshop.model.Role;
 import internetshop.model.ShoppingCart;
 import internetshop.model.User;
 import internetshop.service.ShoppingCartService;
 import internetshop.service.UserService;
 import java.io.IOException;
+import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +34,7 @@ public class RegistrationController extends HttpServlet {
         String repeatPwd = req.getParameter("pwd-repeat");
         if (pwd.equals(repeatPwd)) {
             User user = userService.create(new User(name, login, pwd));
+            user.setRoles(Set.of(Role.of("USER")));
             shoppingCartService.create(new ShoppingCart(user));
             resp.sendRedirect(req.getContextPath() + "/");
         } else {
