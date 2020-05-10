@@ -42,7 +42,6 @@ public class Order {
                 + "id=" + id
                 + ", user=" + user
                 + ", product=" + products
-
                 + '}';
     }
 }
