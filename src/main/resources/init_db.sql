@@ -15,5 +15,7 @@ INSERT INTO `internet-shop`.`products` (`name`, `price`) VALUES ('cat', '3000');
 INSERT INTO `internet-shop`.`products` (`name`, `price`) VALUES ('mobile phone', '9999');
 INSERT INTO `internet-shop`.`products` (`name`, `price`) VALUES ('dress', '799');
 
-
+ALTER TABLE `internet-shop`.`products`
+    DROP INDEX `name_UNIQUE` ;
+;
 

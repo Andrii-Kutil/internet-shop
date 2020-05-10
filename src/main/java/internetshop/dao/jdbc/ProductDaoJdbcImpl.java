@@ -1,6 +1,7 @@
 package internetshop.dao.jdbc;
 
 import internetshop.dao.ProductDao;
+import internetshop.exceptions.DataProcessingException;
 import internetshop.lib.Dao;
 import internetshop.model.Product;
 import internetshop.util.ConnectionUtil;
@@ -33,7 +34,7 @@ public class ProductDaoJdbcImpl implements ProductDao {
                 }
             }
         } catch (SQLException e) {
-            throw new RuntimeException("Created is failed", e);
+            throw new DataProcessingException("Creating was failed", e);
         }
         return product;
     }
@@ -48,8 +49,8 @@ public class ProductDaoJdbcImpl implements ProductDao {
             if (resultSet.next()) {
                 return Optional.of(getProductFromResultSet(resultSet));
             }
-        } catch (SQLException ex) {
-            throw new RuntimeException("Product not found", ex);
+        } catch (SQLException e) {
+            throw new DataProcessingException("Product was not found", e);
         }
         return Optional.empty();
     }
@@ -65,7 +66,7 @@ public class ProductDaoJdbcImpl implements ProductDao {
                 products.add(getProductFromResultSet(resultSet));
             }
         } catch (SQLException ex) {
-            throw new RuntimeException("Products not found", ex);
+            throw new DataProcessingException("Products were not found", ex);
         }
         return products;
     }
@@ -82,7 +83,7 @@ public class ProductDaoJdbcImpl implements ProductDao {
             statement.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new RuntimeException("Product was'nt updated", e);
+            throw new DataProcessingException("Product was not updated", e);
         }
         return product;
     }
@@ -97,7 +98,7 @@ public class ProductDaoJdbcImpl implements ProductDao {
                 return true;
             }
         } catch (SQLException ex) {
-            throw new RuntimeException(ex);
+            throw new DataProcessingException("Product was not deleted", ex);
         }
         return false;
     }
