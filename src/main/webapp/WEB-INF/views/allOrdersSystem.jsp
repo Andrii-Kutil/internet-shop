@@ -26,7 +26,7 @@
                     <c:out value="${order.id}"/>
                 </td>
                 <td>
-                    <c:out value="${order.user.login}"/>
+                    <c:out value="${userLogin}"/>
                 </td>
                 <td>
                     <a href="${pageContext.request.contextPath}

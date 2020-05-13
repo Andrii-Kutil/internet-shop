@@ -5,9 +5,9 @@ import internetshop.lib.Inject;
 import internetshop.lib.Service;
 import internetshop.model.Order;
 import internetshop.model.Product;
-import internetshop.model.User;
 import internetshop.service.OrderService;
 import internetshop.service.ShoppingCartService;
+import internetshop.service.UserService;
 import java.util.List;
 
 @Service
@@ -18,11 +18,14 @@ public class OrderServiceImpl implements OrderService {
     @Inject
     private ShoppingCartService cartService;
 
+    @Inject
+    private UserService userService;
+
     @Override
-    public Order completeOrder(List<Product> products, User user) {
+    public Order completeOrder(List<Product> products, Long userId) {
         List<Product> newListOProd = List.copyOf(products);
-        Order order = new Order(newListOProd, user);
-        cartService.getByUserId(user.getId())
+        Order order = new Order(newListOProd, userId);
+        cartService.getByUserId(userId)
                 .getProducts().clear();
         return orderDao.create(order);
     }

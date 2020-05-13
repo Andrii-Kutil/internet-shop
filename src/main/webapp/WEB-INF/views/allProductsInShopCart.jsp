@@ -12,7 +12,6 @@
 <body>
 <jsp:include page="head.jsp"/>
 <h1 class="container-md col-1 font-weight-bold">Cart</h1>
-<h1 class="container-md col-3 font-weight-bold">Add new product</h1>
 <div class="container-md">
     <table class="table table-bordered font-italic">
         <thead class="thead-dark">

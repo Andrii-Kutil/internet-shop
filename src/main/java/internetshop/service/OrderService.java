@@ -2,11 +2,10 @@ package internetshop.service;
 
 import internetshop.model.Order;
 import internetshop.model.Product;
-import internetshop.model.User;
 import java.util.List;
 
 public interface OrderService {
-    Order completeOrder(List<Product> products, User user);
+    Order completeOrder(List<Product> products, Long userId);
 
     List<Order> getUserOrders(Long userId);
 

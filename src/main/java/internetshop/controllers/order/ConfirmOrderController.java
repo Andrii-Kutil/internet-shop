@@ -21,7 +21,7 @@ public class ConfirmOrderController extends HttpServlet {
         Long userId = (Long) req.getSession().getAttribute("userId");
         ShoppingCart shoppingCart = shoppingCartService.getByUserId(userId);
         if (!shoppingCart.getProducts().isEmpty()) {
-            orderService.completeOrder(shoppingCart.getProducts(), shoppingCart.getUser());
+            orderService.completeOrder(shoppingCart.getProducts(), userId);
             shoppingCartService.clear(shoppingCart);
         }
         resp.sendRedirect(req.getContextPath() + "/orders/all");
