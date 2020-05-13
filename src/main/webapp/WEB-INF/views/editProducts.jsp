@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>Add product</title>
-    <h1 class="container-md col-3 font-weight-bold">Add new product</h1>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
@@ -11,6 +10,8 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<jsp:include page="head.jsp"/>
+<h1 class="container-md col-3 font-weight-bold">Add new product</h1>
 <h2 style="color: crimson">
     ${message}
 </h2>

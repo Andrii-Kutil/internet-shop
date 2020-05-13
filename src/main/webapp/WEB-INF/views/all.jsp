@@ -11,6 +11,7 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<jsp:include page="head.jsp"/>
 <h1 class="container-md col-2 font-weight-bold">All users</h1>
 <div class="container-md">
     <table class="table table-bordered font-italic">
