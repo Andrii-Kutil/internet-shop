@@ -41,7 +41,7 @@ public class ProductDaoJdbcImpl implements ProductDao {
 
     @Override
     public Optional<Product> get(Long id) {
-        String query = "SELECT * FROM products WHERE id = ?";
+        String query = "SELECT id, name, price FROM products WHERE id = ?";
         try (Connection connection = ConnectionUtil.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setLong(1, id);
@@ -103,7 +103,7 @@ public class ProductDaoJdbcImpl implements ProductDao {
         return false;
     }
 
-    public Product getProductFromResultSet(ResultSet rs) throws SQLException {
+    private Product getProductFromResultSet(ResultSet rs) throws SQLException {
         Long id = rs.getLong("id");
         String name = rs.getString("name");
         BigDecimal price = new BigDecimal(rs.getString("price"));

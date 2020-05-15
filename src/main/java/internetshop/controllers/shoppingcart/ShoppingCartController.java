@@ -17,6 +17,7 @@ public class ShoppingCartController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long userId = (Long) req.getSession().getAttribute("userId");
+        req.setAttribute("cartProducts", shoppingCartService.getByUserId(userId).getProducts());
         req.setAttribute("shoppingCart", shoppingCartService.getByUserId(userId));
         req.getRequestDispatcher("/WEB-INF/views/allProductsInShopCart.jsp").forward(req, resp);
     }
