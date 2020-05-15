@@ -138,7 +138,7 @@ public class UserDaoJdbcImpl implements UserDao {
 
     private Set<Role> getRole(Long userId) {
         Set<Role> roles = new HashSet<>();
-        String query = "SELECT users_roles.user_id AS id,"
+        String query = "SELECT users_roles.user_id AS id, "
                 + "roles.role_name FROM users_roles INNER JOIN roles ON  users_roles.role_id"
                 + "= roles.role_id WHERE users_roles.user_id = ?";
         try (Connection connection = ConnectionUtil.getConnection()) {

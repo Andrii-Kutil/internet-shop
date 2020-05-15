@@ -105,7 +105,7 @@ public class ShoppingCartJdbcImpl implements ShoppingCartDao {
 
     private ArrayList<Product> getProducts(Long cartId) {
         ArrayList<Product> products = new ArrayList<>();
-        String query = "SELECT product_id, name,"
+        String query = "SELECT product_id, name, "
                 + "price FROM shopping_carts_products AS cart INNER JOIN products "
                 + "ON  cart.product_id = products.id WHERE cart.cart_id = ?";
         try (Connection connection = ConnectionUtil.getConnection()) {
