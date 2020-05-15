@@ -2,16 +2,14 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
 </head>
 <body>
+<jsp:include page="head.jsp"/>
 <h1>Hello, ${userName}!</h1>
-<a href="${pageContext.request.contextPath}/injectData">Inject test products into the DB</a><br>
-<a href="${pageContext.request.contextPath}/products/all">List of products</a><br>
-<a href="${pageContext.request.contextPath}/shoppingcarts/products/all">List of product in shopping cart</a><br>
-<a href="${pageContext.request.contextPath}/orders/all">My orders</a><br><br>
-<a href="${pageContext.request.contextPath}/users/all">List of users</a><br>
-<a href="${pageContext.request.contextPath}/products/manage">Product management</a><br>
-<a href="${pageContext.request.contextPath}/orders/all/system">Orders all users</a><br>
-<a href="${pageContext.request.contextPath}/logout">Logout</a>
 </body>
 </html>

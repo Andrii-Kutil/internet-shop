@@ -33,10 +33,17 @@ public class RegistrationController extends HttpServlet {
         String pwd = req.getParameter("pwd");
         String repeatPwd = req.getParameter("pwd-repeat");
         if (pwd.equals(repeatPwd)) {
-            User user = userService.create(new User(name, login, pwd));
-            user.setRoles(Set.of(Role.of("USER")));
-            shoppingCartService.create(new ShoppingCart(user));
-            resp.sendRedirect(req.getContextPath() + "/");
+            User user = new User(name, login, pwd);
+            user.setRole(Set.of(Role.of("USER")));
+            if (userService.findByLogin(login).isEmpty()) {
+                userService.create(user);
+                shoppingCartService.create(new ShoppingCart(user.getId()));
+                resp.sendRedirect(req.getContextPath() + "/");
+            } else {
+                req.setAttribute("message", "This login has already existed. "
+                        + "Please try again!");
+                req.getRequestDispatcher("/WEB-INF/views/registration.jsp").forward(req, resp);
+            }
         } else {
             req.setAttribute("message", "Your password and repeat password aren't the same."
                     + "Please try again!");

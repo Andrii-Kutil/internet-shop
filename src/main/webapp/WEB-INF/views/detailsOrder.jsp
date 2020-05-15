@@ -14,9 +14,9 @@
         <c:out value="${order.id}"/>
     </td>
     <td>
-        <c:out value="ID: ${order.user.id}"/><br>
-        <c:out value="Login: ${order.user.login}"/><br>
-        <c:out value="Name: ${order.user.name}"/>
+        <c:out value="ID: ${order.userId}"/><br>
+        <c:out value="Login: ${user.login}"/><br>
+        <c:out value="Name: ${user.name}"/>
     </td>
 </table>
 <table border="1">

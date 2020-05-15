@@ -9,6 +9,7 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<jsp:include page="head.jsp"/>
 <h2 style="color: crimson">
     ${message}
 </h2>
