@@ -18,7 +18,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/injectData">Inject</a>
             <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/products/all">Products</a>
             <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/shoppingcarts/products/all">Cart</a>
             <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/orders/all">My orders</a>

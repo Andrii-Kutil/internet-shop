@@ -16,7 +16,7 @@
     <table class="table table-bordered font-italic">
         <thead class="thead-dark">
         <th>Order ID</th>
-        <th>User's login</th>
+        <th>User's ID</th>
         <th>Details</th>
         <th>from system</th>
         </thead>
@@ -26,7 +26,7 @@
                     <c:out value="${order.id}"/>
                 </td>
                 <td>
-                    <c:out value="${userLogin}"/>
+                    <c:out value="${order.userId}"/>
                 </td>
                 <td>
                     <a href="${pageContext.request.contextPath}
