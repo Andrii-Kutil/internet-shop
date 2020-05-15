@@ -28,7 +28,7 @@ public class OrderDaoJdbcImpl implements OrderDao {
             statement.setLong(1, userId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                orders.add(getCopyOfOrder(resultSet));
+                orders.add(getOrderFromResultSet(resultSet));
             }
             return orders;
         } catch (SQLException e) {
@@ -63,7 +63,7 @@ public class OrderDaoJdbcImpl implements OrderDao {
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return Optional.of(getCopyOfOrder(resultSet));
+                return Optional.of(getOrderFromResultSet(resultSet));
             }
             return Optional.empty();
         } catch (SQLException e) {
@@ -79,7 +79,7 @@ public class OrderDaoJdbcImpl implements OrderDao {
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                orders.add(getCopyOfOrder(resultSet));
+                orders.add(getOrderFromResultSet(resultSet));
             }
             return orders;
         } catch (SQLException e) {
@@ -123,7 +123,7 @@ public class OrderDaoJdbcImpl implements OrderDao {
         }
     }
 
-    private Order getCopyOfOrder(ResultSet resultSet) throws SQLException {
+    private Order getOrderFromResultSet(ResultSet resultSet) throws SQLException {
         Long orderId = resultSet.getLong("order_id");
         Long userId = resultSet.getLong("user_id");
         return new Order(orderId, userId, getProductsOfOrder(orderId));
