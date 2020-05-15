@@ -34,7 +34,7 @@ public class ShoppingCartJdbcImpl implements ShoppingCartDao {
             setProducts(cart);
             return cart;
         } catch (SQLException e) {
-            throw new DataProcessingException("Creation of cart is failed", e);
+            throw new DataProcessingException("Shopping cart was not created", e);
         }
     }
 
@@ -46,9 +46,7 @@ public class ShoppingCartJdbcImpl implements ShoppingCartDao {
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                ShoppingCart sc = getShoppingCartFromResultSet(resultSet);
-                sc.setProducts(getProducts(sc.getId()));
-                return Optional.of(sc);
+                return Optional.of(getShoppingCartFromResultSet(resultSet));
             }
             return Optional.empty();
         } catch (SQLException e) {
@@ -87,9 +85,7 @@ public class ShoppingCartJdbcImpl implements ShoppingCartDao {
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                ShoppingCart shoppingCart = getShoppingCartFromResultSet(resultSet);
-                shoppingCart.setProducts(getProducts(shoppingCart.getId()));
-                shoppingCarts.add(shoppingCart);
+                shoppingCarts.add(getShoppingCartFromResultSet(resultSet));
             }
         } catch (SQLException ex) {
             throw new DataProcessingException("Carts were not found", ex);
@@ -100,7 +96,9 @@ public class ShoppingCartJdbcImpl implements ShoppingCartDao {
     private ShoppingCart getShoppingCartFromResultSet(ResultSet rs) throws SQLException {
         Long cartId = rs.getLong("cart_id");
         Long userId = rs.getLong("user_id");
-        return new ShoppingCart(cartId, userId);
+        ShoppingCart shoppingCart = new ShoppingCart(cartId, userId);
+        shoppingCart.setProducts(getProducts(cartId));
+        return shoppingCart;
     }
 
     private ArrayList<Product> getProducts(Long cartId) {
@@ -146,7 +144,7 @@ public class ShoppingCartJdbcImpl implements ShoppingCartDao {
             statement.setLong(1, cartId);
             statement.executeUpdate();
         } catch (SQLException e) {
-            throw new DataProcessingException("Can't delete products from shopping cart", e);
+            throw new DataProcessingException("Products were nit deleted", e);
         }
     }
 }

@@ -22,7 +22,7 @@ public class UserDaoJdbcImpl implements UserDao {
 
     @Override
     public Optional<User> findByLogin(String login) {
-        String query = "SELECT * from users where user_login = ?";
+        String query = "SELECT * FROM users WHERE user_login = ?";
         try (Connection connection = ConnectionUtil.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, login);
@@ -53,21 +53,19 @@ public class UserDaoJdbcImpl implements UserDao {
             setRole(user);
             return user;
         } catch (SQLException e) {
-            throw new DataProcessingException("Creation of user is failed", e);
+            throw new DataProcessingException("User was not created", e);
         }
     }
 
     @Override
     public Optional<User> get(Long id) {
-        String query = "SELECT * from users where user_id = ?";
+        String query = "SELECT * FROM users WHERE user_id = ?";
         try (Connection connection = ConnectionUtil.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                User user = getUserFromResultSet(resultSet);
-                user.setRoles(getRole(id));
-                return Optional.of(user);
+                return Optional.of(getUserFromResultSet(resultSet));
             }
             return Optional.empty();
         } catch (SQLException e) {
@@ -96,8 +94,8 @@ public class UserDaoJdbcImpl implements UserDao {
 
     @Override
     public boolean delete(Long id) {
-        String query = "DELETE FROM users WHERE user_id = ?";
         deleteRole(id);
+        String query = "DELETE FROM users WHERE user_id = ?";
         try (Connection connection = ConnectionUtil.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setLong(1, id);
@@ -118,9 +116,7 @@ public class UserDaoJdbcImpl implements UserDao {
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                User user = getUserFromResultSet(resultSet);
-                user.setRoles(getRole(user.getId()));
-                users.add(user);
+                users.add(getUserFromResultSet(resultSet));
             }
         } catch (SQLException ex) {
             throw new DataProcessingException("Users were not found", ex);
@@ -133,7 +129,9 @@ public class UserDaoJdbcImpl implements UserDao {
         String name = rs.getString("user_name");
         String login = rs.getString("user_login");
         String password = rs.getString("user_password");
-        return new User(id, name, login, password);
+        User user = new User(id, name, login, password);
+        user.setRole(getRole(id));
+        return user;
     }
 
     private Set<Role> getRole(Long userId) {
