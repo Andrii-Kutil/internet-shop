@@ -18,13 +18,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/products/all">Products</a>
-            <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/shoppingcarts/products/all">Cart</a>
-            <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/orders/all">My orders</a>
-            <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/users/all">All users</a>
-            <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/products/manage">Product management</a>
-            <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/orders/all/system">All orders</a>
-            <a class="nav-item nav-link active" href="${pageContext.request.contextPath}/logout">Log out</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/products/all">Products</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/shoppingcarts/products/all">Cart</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/orders/all">My orders</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/users/all">All users</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/products/manage">Product management</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/orders/all/system">All orders</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/logout">Log out</a>
         </div>
     </div>
 </nav>
