@@ -6,6 +6,7 @@ import internetshop.model.ShoppingCart;
 import internetshop.model.User;
 import internetshop.service.ShoppingCartService;
 import internetshop.service.UserService;
+import internetshop.util.HashUtil;
 import java.io.IOException;
 import java.util.Set;
 import javax.servlet.ServletException;
@@ -33,9 +34,11 @@ public class RegistrationController extends HttpServlet {
         String pwd = req.getParameter("pwd");
         String repeatPwd = req.getParameter("pwd-repeat");
         if (pwd.equals(repeatPwd)) {
-            User user = new User(name, login, pwd);
-            user.setRole(Set.of(Role.of("USER")));
             if (userService.findByLogin(login).isEmpty()) {
+                User user = new User(name, login);
+                user.setSalt(HashUtil.getSalt());
+                user.setPassword(HashUtil.hashPassword(pwd, user.getSalt()));
+                user.setRole(Set.of(Role.of("USER")));
                 userService.create(user);
                 shoppingCartService.create(new ShoppingCart(user.getId()));
                 resp.sendRedirect(req.getContextPath() + "/");
