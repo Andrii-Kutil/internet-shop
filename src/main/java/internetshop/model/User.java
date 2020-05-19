@@ -7,21 +7,8 @@ public class User {
     private String name;
     private String login;
     private String password;
+    private byte[] salt;
     private Set<Role> roles;
-
-    public User(String name) {
-        this.name = name;
-    }
-
-    public User(Long id) {
-        this.id = id;
-    }
-
-    public User(Long id, String login, String name) {
-        this.id = id;
-        this.login = login;
-        this.name = name;
-    }
 
     public User(String name, String login, String password) {
         this.name = name;
@@ -29,11 +16,20 @@ public class User {
         this.password = password;
     }
 
-    public User(Long id, String name, String login, String password) {
+    public User(Long id, String name, String login, String password, byte[] salt) {
         this.id = id;
         this.name = name;
         this.login = login;
         this.password = password;
+        this.salt = salt;
+    }
+
+    public byte[] getSalt() {
+        return salt;
+    }
+
+    public void setSalt(byte[] salt) {
+        this.salt = salt;
     }
 
     public Long getId() {

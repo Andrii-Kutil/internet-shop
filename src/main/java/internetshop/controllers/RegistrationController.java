@@ -33,9 +33,9 @@ public class RegistrationController extends HttpServlet {
         String pwd = req.getParameter("pwd");
         String repeatPwd = req.getParameter("pwd-repeat");
         if (pwd.equals(repeatPwd)) {
-            User user = new User(name, login, pwd);
-            user.setRole(Set.of(Role.of("USER")));
             if (userService.findByLogin(login).isEmpty()) {
+                User user = new User(name, login, pwd);
+                user.setRole(Set.of(Role.of("USER")));
                 userService.create(user);
                 shoppingCartService.create(new ShoppingCart(user.getId()));
                 resp.sendRedirect(req.getContextPath() + "/");

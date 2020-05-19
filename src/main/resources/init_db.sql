@@ -28,7 +28,7 @@ CREATE TABLE `orders` (
                           PRIMARY KEY (`order_id`),
                           KEY `orders_users_fk_idx` (`user_id`),
                           CONSTRAINT `orders_users_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,7 +60,7 @@ CREATE TABLE `products` (
                             `name` varchar(225) NOT NULL,
                             `price` decimal(11,0) NOT NULL,
                             PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +91,7 @@ CREATE TABLE `shopping_carts` (
                                   PRIMARY KEY (`cart_id`),
                                   KEY `carts_users_fk_idx` (`user_id`),
                                   CONSTRAINT `carts_users_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,10 +122,11 @@ CREATE TABLE `users` (
                          `user_id` bigint NOT NULL AUTO_INCREMENT,
                          `user_name` varchar(225) NOT NULL,
                          `user_login` varchar(225) NOT NULL,
-                         `user_password` varchar(225) NOT NULL,
+                         `user_password` varchar(500) NOT NULL,
+                         `user_salt` varbinary(16) DEFAULT NULL,
                          PRIMARY KEY (`user_id`),
                          UNIQUE KEY `user_login_UNIQUE` (`user_login`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,5 +155,4 @@ CREATE TABLE `users_roles` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-15  4:46:36
-
+-- Dump completed on 2020-05-18 18:10:09

@@ -10,6 +10,32 @@
 </head>
 <body>
 <jsp:include page="head.jsp"/>
-<h1>Hello, ${userName}!</h1>
+<h1 class="text-center">Hello, ${userName}!</h1>
+<style>
+    .fig {
+        text-align: center;
+    }
+</style>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Фотография с подписью</title>
+    <style>
+        .fig {
+            display: block;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<figure class="fig">
+    <img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;"
+         src="https://previews.123rf.com/images/orfeev/orfeev1401/orfeev140100014/25117924-clothes-sketches.jpg"
+         width="" height="">
+</figure>
+</body>
+</html>
 </body>
 </html>
