@@ -10,9 +10,10 @@ public class User {
     private byte[] salt;
     private Set<Role> roles;
 
-    public User(String name, String login) {
+    public User(String name, String login, String password) {
         this.name = name;
         this.login = login;
+        this.password = password;
     }
 
     public User(Long id, String name, String login, String password, byte[] salt) {
