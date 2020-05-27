@@ -114,7 +114,7 @@ public class ShoppingCartJdbcImpl implements ShoppingCartDao {
                 Long id = resultSet.getLong("product_id");
                 String name = resultSet.getString("name");
                 BigDecimal price = resultSet.getBigDecimal("price");
-                products.add(new Product(id, name, price));
+                products.add(new Product(name, price, id));
             }
         } catch (SQLException e) {
             throw new DataProcessingException("Products were not given", e);

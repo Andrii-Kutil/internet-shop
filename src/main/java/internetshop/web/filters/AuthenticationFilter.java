@@ -18,7 +18,7 @@ public class AuthenticationFilter implements Filter {
     private final UserService userService = (UserService) injector.getInstance(UserService.class);
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
 
     }
 

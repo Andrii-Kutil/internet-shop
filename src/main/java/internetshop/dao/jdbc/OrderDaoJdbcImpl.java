@@ -126,7 +126,7 @@ public class OrderDaoJdbcImpl implements OrderDao {
     private Order getOrderFromResultSet(ResultSet resultSet) throws SQLException {
         Long orderId = resultSet.getLong("order_id");
         Long userId = resultSet.getLong("user_id");
-        return new Order(orderId, userId, getProductsOfOrder(orderId));
+        return new Order(userId, getProductsOfOrder(orderId), orderId);
     }
 
     private List<Product> getProductsOfOrder(Long orderId) {
@@ -142,7 +142,7 @@ public class OrderDaoJdbcImpl implements OrderDao {
                 Long productId = resultSet.getLong("id");
                 String name = resultSet.getString("name");
                 BigDecimal price = resultSet.getBigDecimal("price");
-                products.add(new Product(productId, name, price));
+                products.add(new Product(name, price, productId));
             }
             return products;
         } catch (SQLException e) {

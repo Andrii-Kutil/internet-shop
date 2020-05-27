@@ -20,11 +20,11 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/products/all">Products</a>
             <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/shoppingcarts/products/all">Cart</a>
-            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/orders/all">My orders</a>
-            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/users/all">All users</a>
-            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/products/manage">Product management</a>
-            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/orders/all/system">All orders</a>
-            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/logout">Log out</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/orders/all">My_orders</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/users/all">All_users</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/products/manage">Product_management</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/orders/all/system">All_orders</a>
+            <a class="nav-item nav-link active text-uppercase font-weight-normal text-monospace" href="${pageContext.request.contextPath}/logout">Log_out</a>
         </div>
     </div>
 </nav>

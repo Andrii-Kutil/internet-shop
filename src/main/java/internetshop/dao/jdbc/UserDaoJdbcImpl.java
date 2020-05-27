@@ -132,7 +132,7 @@ public class UserDaoJdbcImpl implements UserDao {
         String login = rs.getString("user_login");
         String password = rs.getString("user_password");
         byte[] salt = rs.getBytes("user_salt");
-        User user = new User(id, name, login, password, salt);
+        User user = new User(name, login, password, id, salt);
         user.setRole(getRole(id));
         return user;
     }
