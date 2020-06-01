@@ -31,10 +31,14 @@
 </head>
 <body>
 <figure class="fig">
-    <img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;"
-         src="https://previews.123rf.com/images/orfeev/orfeev1401/orfeev140100014/25117924-clothes-sketches.jpg"
-         width="" height="">
+    <img style="-webkit-user-select: none;margin: auto;"
+         src="https://alexsmokinof.lviv.ua/wp-content/uploads/2019/03/101.jpg" width="1000" height="600">
 </figure>
+<div class="container-md">
+<a href="${pageContext.request.contextPath}/inject">
+    <button type="button" class="btn btn-primary btn-lg btn-block">Inject ADMIN</button>
+</a>
+</div>
 </body>
 </html>
 </body>

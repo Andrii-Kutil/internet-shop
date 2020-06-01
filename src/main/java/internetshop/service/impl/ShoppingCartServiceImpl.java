@@ -6,7 +6,6 @@ import internetshop.lib.Service;
 import internetshop.model.Product;
 import internetshop.model.ShoppingCart;
 import internetshop.service.ShoppingCartService;
-import java.util.List;
 
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
@@ -46,13 +45,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Override
     public ShoppingCart getByUserId(Long userId) {
         return shoppingCartDao.get(userId).get();
-    }
-
-    @Override
-    public List<Product> getAllProducts(ShoppingCart shoppingCart) {
-        return shoppingCartDao.getAll().stream()
-                .filter(s -> s.getId().equals(shoppingCart.getId()))
-                .findAny().get().getProducts();
     }
 
     @Override

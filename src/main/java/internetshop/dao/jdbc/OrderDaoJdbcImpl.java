@@ -110,10 +110,10 @@ public class OrderDaoJdbcImpl implements OrderDao {
 
     private void addProductsToOrder(Order order) {
         try (Connection connection = ConnectionUtil.getConnection()) {
+            String query = "INSERT INTO orders_products(order_id, product_id) "
+                    + "values(?,?)";
+            PreparedStatement statement = connection.prepareStatement(query);
             for (Product product : order.getProducts()) {
-                String query = "INSERT INTO orders_products(order_id, product_id) "
-                        + "values(?,?)";
-                PreparedStatement statement = connection.prepareStatement(query);
                 statement.setLong(1, order.getId());
                 statement.setLong(2, product.getId());
                 statement.executeUpdate();
@@ -126,7 +126,7 @@ public class OrderDaoJdbcImpl implements OrderDao {
     private Order getOrderFromResultSet(ResultSet resultSet) throws SQLException {
         Long orderId = resultSet.getLong("order_id");
         Long userId = resultSet.getLong("user_id");
-        return new Order(orderId, userId, getProductsOfOrder(orderId));
+        return new Order(userId, getProductsOfOrder(orderId), orderId);
     }
 
     private List<Product> getProductsOfOrder(Long orderId) {
@@ -142,7 +142,7 @@ public class OrderDaoJdbcImpl implements OrderDao {
                 Long productId = resultSet.getLong("id");
                 String name = resultSet.getString("name");
                 BigDecimal price = resultSet.getBigDecimal("price");
-                products.add(new Product(productId, name, price));
+                products.add(new Product(name, price, productId));
             }
             return products;
         } catch (SQLException e) {

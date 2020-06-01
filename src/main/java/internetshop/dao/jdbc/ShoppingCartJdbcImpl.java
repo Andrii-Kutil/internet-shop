@@ -114,7 +114,7 @@ public class ShoppingCartJdbcImpl implements ShoppingCartDao {
                 Long id = resultSet.getLong("product_id");
                 String name = resultSet.getString("name");
                 BigDecimal price = resultSet.getBigDecimal("price");
-                products.add(new Product(id, name, price));
+                products.add(new Product(name, price, id));
             }
         } catch (SQLException e) {
             throw new DataProcessingException("Products were not given", e);
@@ -124,10 +124,10 @@ public class ShoppingCartJdbcImpl implements ShoppingCartDao {
 
     private void setProducts(ShoppingCart shoppingCart) {
         try (Connection connection = ConnectionUtil.getConnection()) {
+            String query = "INSERT INTO shopping_carts_products"
+                    + "(cart_id, product_id) VALUES(?, ?)";
+            PreparedStatement statement = connection.prepareStatement(query);
             for (Product product : shoppingCart.getProducts()) {
-                String query = "INSERT INTO shopping_carts_products"
-                        + "(cart_id, product_id) VALUES(?, ?)";
-                PreparedStatement statement = connection.prepareStatement(query);
                 statement.setLong(1, shoppingCart.getId());
                 statement.setLong(2, product.getId());
                 statement.executeUpdate();

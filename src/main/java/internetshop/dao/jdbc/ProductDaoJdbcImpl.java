@@ -107,6 +107,6 @@ public class ProductDaoJdbcImpl implements ProductDao {
         Long id = rs.getLong("id");
         String name = rs.getString("name");
         BigDecimal price = new BigDecimal(rs.getString("price"));
-        return new Product(id, name, price);
+        return new Product(name, price, id);
     }
 }

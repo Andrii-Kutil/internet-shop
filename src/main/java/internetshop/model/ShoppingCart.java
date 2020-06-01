@@ -5,8 +5,8 @@ import java.util.List;
 
 public class ShoppingCart {
     private Long id;
-    private List<Product> products;
     private Long userId;
+    private List<Product> products;
 
     public ShoppingCart(Long userId) {
         this.userId = userId;
@@ -14,8 +14,8 @@ public class ShoppingCart {
     }
 
     public ShoppingCart(Long id, Long userId) {
+        this(userId);
         this.id = id;
-        this.userId = userId;
         this.products = new ArrayList<>();
     }
 
