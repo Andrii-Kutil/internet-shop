@@ -87,5 +87,5 @@ If you would like to check admin role you need to inject Admin. You can make it 
 (Inject button is under the picture).
 
 ## <a name='author'></a>Author
-[Andrii Kutil](https://github.com/Andrii-Kutil)
+[Andrii Kutil](https://www.linkedin.com/in/andrii-kutil-567246179/)
 
