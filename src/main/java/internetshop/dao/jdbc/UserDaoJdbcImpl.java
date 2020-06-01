@@ -52,11 +52,11 @@ public class UserDaoJdbcImpl implements UserDao {
             if (resultSet.next()) {
                 user.setId(resultSet.getLong(1));
             }
-            setRole(user);
-            return user;
         } catch (SQLException e) {
             throw new DataProcessingException("User was not created", e);
         }
+        setRole(user);
+        return user;
     }
 
     @Override
@@ -87,11 +87,11 @@ public class UserDaoJdbcImpl implements UserDao {
             statement.setLong(4, user.getId());
             statement.executeUpdate();
             deleteRole(user.getId());
-            setRole(user);
-            return user;
         } catch (SQLException e) {
             throw new DataProcessingException("User was not updated", e);
         }
+        setRole(user);
+        return user;
     }
 
     @Override
@@ -157,9 +157,9 @@ public class UserDaoJdbcImpl implements UserDao {
 
     private void setRole(User user) {
         try (Connection connection = ConnectionUtil.getConnection()) {
+            String query = "INSERT INTO users_roles (user_id, role_id) VALUES(?, ?)";
+            PreparedStatement statement = connection.prepareStatement(query);
             for (Role role : user.getRoles()) {
-                String query = "INSERT INTO users_roles (user_id, role_id) VALUES(?, ?)";
-                PreparedStatement statement = connection.prepareStatement(query);
                 statement.setLong(1, user.getId());
                 statement.setLong(2, getRoleId(role.getRoleName().name(), connection));
                 statement.executeUpdate();

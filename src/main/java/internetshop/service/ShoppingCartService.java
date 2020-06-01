@@ -2,7 +2,6 @@ package internetshop.service;
 
 import internetshop.model.Product;
 import internetshop.model.ShoppingCart;
-import java.util.List;
 
 public interface ShoppingCartService {
     ShoppingCart create(ShoppingCart shoppingCart);
@@ -14,8 +13,6 @@ public interface ShoppingCartService {
     void clear(ShoppingCart shoppingCart);
 
     ShoppingCart getByUserId(Long userId);
-
-    List<Product> getAllProducts(ShoppingCart shoppingCart);
 
     boolean delete(Long cartId);
 }
